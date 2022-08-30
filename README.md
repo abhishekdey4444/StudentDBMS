@@ -1,7 +1,7 @@
 # StudentDBMS
 A api based on FASTApi for students in IEM (https://iemdbms.herokuapp.com)
 
-##how to use:-
+## how to use:-
 
 https://iemdbms.herokuapp.com/student/email/<email_id>
 
