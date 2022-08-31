@@ -18,7 +18,7 @@ app=FastAPI()
 #================================================== (R O U T E S) ========================================================
 @app.get("/")
 def home():
-    return "Greetings! Welcome to the database"
+    return "Greetings! Welcome to the database -----------------> https://iemdbms.herokuapp.com/student/email/[email_id] ----------------> Replace [email id] with any E-mail ID of 4th year student(Passout-Batch 2023)"
 
 @app.get("/student/id/{enrollment_id}")
 def get_stud(enrollment_id:int):
