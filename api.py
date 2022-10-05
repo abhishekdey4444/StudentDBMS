@@ -18,7 +18,7 @@ app=FastAPI()
 #================================================== (R O U T E S) ========================================================
 @app.get("/")
 def home():
-    return "Greetings! Welcome to the database ----> https://iemdbms.herokuapp.com/student/email/[email_id] ----> Replace [email id] with any E-mail ID of 4th year student(Passout-Batch 2023)"
+    return "Greetings! Welcome to the database"
 
 @app.get("/student/id/{enrollment_id}")
 def get_stud(enrollment_id:int):
@@ -46,7 +46,19 @@ def searchByEmailId(email):
         return "data for refered email id does not exist"  
     return student
 
-
+@app.get("/student/name/{name}")
+def searchByName(name):
+    students=[]
+    flag=False
+    for stud in data:
+        tempName=stud['fullname']
+        tempName=tempName.lower()
+        if tempName.find(name.lower())>=0 or tempName.find(name.upper())>=0:
+            students.append(stud)
+            flag=True
+    if flag==False:
+        return "data for refered email id does not exist"
+    return students
 
 
 
